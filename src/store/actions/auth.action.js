@@ -1,6 +1,6 @@
 import { Http } from "../../config/Http";
 import { changeLoading } from "./loading.action";
-import { changeNotify } from "./notify.action";
+import { changeNotify } from "./notify.action"; 
 
 export const actionTypes = {
   CHANGE: "AUTH_CHANGE",
@@ -30,7 +30,7 @@ export const login = (credentials) => (dispatch) => {
   return Http.post("oauth/token", {
     grant_type: "password",
     client_id: 2,
-    client_secret: "G9RFK3AryGZ9XQpsLYlAA89OZtESQy4KM3apKZrE",
+    client_secret: "nkHHe4D8Wo5hQ0cwGVOSp9ec8qT20Kb9Lb8O2FNc",
     username: credentials.email,
     password: credentials.password,
   })
@@ -46,19 +46,21 @@ export const login = (credentials) => (dispatch) => {
       dispatch(changeLoading({ open: false }));
       if (typeof error.response !== "undefined") {
         if (error.response.status === 401 || error.response.status === 400) {
+          console.log('tets')
           dispatch(
             changeNotify({
               open: true,
-              class: "error",
-              msg: "Email ou senha incorretos",
+              class: 'error',
+              msg: 'Email ou senha incorretos',
             })
           );
         } else {
+          console.log('tessts')
           dispatch(
             changeNotify({
               open: true,
-              class: "error",
-              msg: "Erro ao se conectar com servidor",
+              class: 'error',
+              msg: 'Erro ao se conectar com servidor',
             })
           );
         }

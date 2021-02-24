@@ -2,8 +2,8 @@ export const actionsType = {
     CHANGE: 'CHANGE_ALERT'
 }
 
-export const changeAlert = (payload) => ({
+export const changeAlert = (payLoad) => ({
     type: actionsType.CHANGE,
-    payload
+    payLoad
 })
 

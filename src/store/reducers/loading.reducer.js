@@ -1,17 +1,17 @@
-import { actionTypes } from '../actions/loading.action';
+import { actionTypes } from '../actions/loading.action'; 
 
 const initialState = {
         open: false,
         msg: 'Carregando...'
 }
 
-export default (state= initialState, {type, payload}) =>{
+export default (state= initialState, {type, payLoad}) =>{
     switch(type) {
                                         
         case actionTypes.CHANGE:
-            return {...state, ...payload}
+            return {...state, ...payLoad}
 
-        default:
+        default: 
             return state
     }
 
